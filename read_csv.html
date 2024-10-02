@@ -1,38 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Read CSV file with JS</title>
+<html><head>
+  <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+  <script src="jquery-csv.js"></script>
 </head>
-
 <body>
-    <form id="testForm">
-      <input type="file" id="UploadFile" accept=".csv" />
-      <br />
-      <input type="submit" value="submit" />
-    </form>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script>
-      const testForm = document.getElementById("testForm");
-      const csvDataFile = document.getElementById("UploadFile");
-  
-      testForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const input = csvDataFile.files[0];
-        const reader = new FileReader();
-  
-        reader.onload = function (e) {
-          const text = e.target.result;
-          const csvData = d3.csvParse(text);
-          document.write(JSON.stringify(csvData));
-        };
-  
-        reader.readAsText(input);
-      });
-    </script>
-  </body>
-
-</html>
+  <script type="text/javascript">
+  // sent a GET request to retrieve the CSV file contents
+  $.get( "stars_0_23pc.csv", function( CSVdata) {
+     // CSVdata is populated with the file contents...
+     // ...ready to be converted into an Array
+      data = $.csv.toArray(CSVdata);
+      console.log(data)
+  });
+  </script>
+</body></html>
