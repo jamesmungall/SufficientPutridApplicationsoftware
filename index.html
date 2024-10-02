@@ -2,22 +2,24 @@
 <html>
 <head>
   <link rel="stylesheet" href="styles.css">
-  <script src="myScript.js"></script> 
+  <script src="myScript.js"></script>
+ <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 </head>
 <body>
+<div id="tester" style="width:600px;height:250px;"></div>
+ <script>
 
-<h1>This is a heading</h1>
- <h2>Demo JavaScript in Head</h2>
+	TESTER = document.getElementById('tester');
 
-<p id="demo">A Paragraph</p>
- <p id = "gaia_csv"> gaia_csv</p>
-<button type="button" onclick="myFunction()">Try it</button>
- <button type="button" onclick="get_csv()">Load csv file</button>
+	Plotly.newPlot( TESTER, [{
 
- <p> <a href="https://plotly.com/~peanuts26/21/">Visit Plotly chart</a> </p>
- <p> <a href="https://plotly.com/~peanuts26/14/">Visit Plotly chart</a> </p>
- <p><iframe title = "plotly chart" frameborder="0" scrolling="no" src="//plotly.com/~peanuts26/14.embed" id="Iframe"></iframe></p>
- 
+	x: [1, 2, 3, 4, 5],
+
+	y: [1, 2, 4, 8, 16] }], {
+
+	margin: { t: 0 } } );
+
+</script>
 
 </body>
 </html> 
