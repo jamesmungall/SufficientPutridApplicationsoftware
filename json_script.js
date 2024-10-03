@@ -1,6 +1,6 @@
 async function fetchCsvData() {
     try {
-        const response = await fetch('data.csv');
+        const response = await fetch('stars_0_23pc.csv');
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
@@ -11,7 +11,7 @@ async function fetchCsvData() {
         });
 
         const csvArray = data.data; // This will be an array of objects
-        document.getElementById('csvData').textContent = JSON.stringify(csvArray, null, 2);
+        document.getElementById('jsonData').textContent = JSON.stringify(csvArray, null, 2);
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
