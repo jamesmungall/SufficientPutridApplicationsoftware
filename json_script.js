@@ -9,7 +9,9 @@ async function fetchJsonData(filename) {
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
-    return JSON.parse(data)
+    if(data){
+        return JSON.parse(data)
+    }
 }
 
 json_obj = fetchJsonData('stars_0_23pc.json');
