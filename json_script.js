@@ -5,13 +5,13 @@ async function fetchJsonData(filename) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
         const data = await response.json();
+        return JSON.parse(data)
         
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
-    if(data){
-        return JSON.parse(data)
-    }
+    
+    
 }
 
 json_obj = fetchJsonData('stars_0_23pc.json');
