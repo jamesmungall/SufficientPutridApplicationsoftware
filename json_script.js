@@ -1,6 +1,6 @@
 async function fetchJsonData(filename) {
     try {
-        const response = await fetch(filename);
+        const response = await fetch('stars_0_23pc.json');
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
@@ -16,6 +16,6 @@ async function fetchJsonData(filename) {
 
 json_obj = fetchJsonData('stars_0_23pc.json');
 
-document.getElementById('jsonData').textContent = json_obj.SOURCE_ID;
+//document.getElementById('jsonData').textContent = json_obj.SOURCE_ID;
 document.getElementById('ra').textContent = json_obj.ra;
-document.getElementById('dec').textContent = json_obj.dec;
+//document.getElementById('dec').textContent = json_obj.dec;
