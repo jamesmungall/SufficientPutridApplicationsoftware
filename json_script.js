@@ -1,6 +1,6 @@
 async function fetchJsonData() {
     try {
-        const response = await fetch('data.json');
+        const response = await fetch('stars_0_23pc.json');
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
