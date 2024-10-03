@@ -16,6 +16,6 @@ async function fetchJsonData(filename) {
 
 json_obj = fetchJsonData('stars_0_23pc.json');
 
-document.getElementById('jsonData').textContent = json_obj.source_id;
+document.getElementById('jsonData').textContent = json_obj.SOURCE_ID;
 document.getElementById('ra').textContent = json_obj.ra;
 document.getElementById('dec').textContent = json_obj.dec;
