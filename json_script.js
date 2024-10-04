@@ -1,20 +1,14 @@
-async function fetchCsvData() {
+async function fetchJsonData() {
     try {
-        const response = await fetch('stars_0_23pc.csv');
+        const response = await fetch('data.json');
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
-        const csvText = await response.text();
-        const data = Papa.parse(csvText, {
-            header: true,
-            skipEmptyLines: true
-        });
-
-        const csvArray = data.data; // This will be an array of objects
-        document.getElementById('jsonData').textContent = JSON.stringify(csvArray, null, 2);
+        const data = await response.json();
+        document.getElementById('jsonData').textContent = JSON.stringify(data, null, 2);
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
 }
 
-fetchCsvData();
+fetchJsonData();
