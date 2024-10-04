@@ -69,7 +69,7 @@ function run_plotly() {
   Plotly.newPlot("plotly_div", data, layout, params);
 }
 
-function access_data() {
+function add_xyz() {
   x_array = [];
   y_array = [];
   z_array = [];
@@ -77,8 +77,17 @@ function access_data() {
   dec = json_data_var.dec;
   distance = json_data_var.distance;
 
+  for (let i = 0; i < distance.length; i++) {
+    x_array[i] = distance[i] * Math.cos(dec[i]) * Math.sin(ra[i]);
+    y_array[i] = distance[i] * Math.cos(dec[i]) * Math.cos(ra[i]);
+    z_array[i] = distance[i] * Math.sin(dec[i]);
+  }
+  json_data_var["x"] = x_array;
+  json_data_var["y"] = y_array;
+  json_data_var["z"] = z_array;
+
   if (json_data_var) {
-    output = "first ra, json_data_var.ra[0], is " + json_data_var.ra[0];
+    output = "output is ";
   } else {
     output = "empty output";
   }
@@ -88,9 +97,7 @@ function access_data() {
 var json_data_var;
 
 document.getElementById("get_json_button").addEventListener("click", get_json);
-document
-  .getElementById("access_data_button")
-  .addEventListener("click", access_data);
+document.getElementById("add_xyz_button").addEventListener("click", add_xyz);
 document
   .getElementById("run_plotly_button")
   .addEventListener("click", run_plotly);
