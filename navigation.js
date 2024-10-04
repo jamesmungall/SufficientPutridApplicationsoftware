@@ -8,6 +8,7 @@ function injectCommonHtml() {
     <a href="stars_0_23pc.csv">CSV for stars within 23pc</a>
     <a href="read_csv.html">Read csv</a>
     <a href="get_file.html">Get file</a>
+    <a href="read_json.html">Read JSON</a>
 	</nav>
         </header>
     `;
