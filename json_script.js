@@ -24,21 +24,20 @@ function use_json(data) {
 }
 
 function run_plotly(ra_array, dec_array) {
-  TESTER = document.getElementById("plotly_div");
+  var trace1 = {
+    x: ra_array,
+    y: dec_array,
+    type: "scatter"
+  };
 
-  Plotly.newPlot(
-    TESTER,
-    [
-      {
-        x: ra_array,
+  var data = [trace1];
+  var layout = {
+    title: "Scroll and Zoom",
+    showlegend: false,
+    margin: { t: 0 }
+  };
 
-        y: dec_array
-      }
-    ],
-    {
-      margin: { t: 0 }
-    }
-  );
+  Plotly.newPlot("plotly_div", data, layout, { scrollZoom: true });
 }
 window.onload = function () {
   document.getElementById('myButton').addEventListener('click', get_json);
