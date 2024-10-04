@@ -40,5 +40,4 @@ function run_plotly(ra_array, dec_array) {
     }
   );
 }
-
-get_json();
+document.getElementById('myButton').addEventListener('click', get_json);
