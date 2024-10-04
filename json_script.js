@@ -44,14 +44,15 @@ function make_json_data_var(data) {
 
 function run_plotly() {
   var trace1 = {
-    x: json_data_var.ra,
-    y: json_data_var.dec,
+    x: json_data_var.x,
+    y: json_data_var.y,
+    z: json_data_var.z,
     mode: "markers",
     marker: {
       size: 5,
       color: json_data_var.temperature
     },
-    type: "scatter"
+    type: "scatter3d"
   };
 
   var data = [trace1];
@@ -97,9 +98,11 @@ function add_xyz() {
 var json_data_var;
 
 window.onload = function () {
-  document.getElementById("get_json_button").addEventListener("click", get_json);
+  document
+    .getElementById("get_json_button")
+    .addEventListener("click", get_json);
   document.getElementById("add_xyz_button").addEventListener("click", add_xyz);
   document
     .getElementById("run_plotly_button")
     .addEventListener("click", run_plotly);
-}
+};
