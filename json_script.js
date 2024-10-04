@@ -85,9 +85,7 @@ window.onload = function () {
     .getElementById("get_json_button")
     .addEventListener("click", get_json);
   document.getElementById("add_xyz_button").addEventListener("click", add_xyz);
-  document
-    .getElementById("run_plotly_button")
-    .addEventListener("click", run_plotly);
+
   document
     .getElementById("add_brightness_button")
     .addEventListener("click", add_brightness);
