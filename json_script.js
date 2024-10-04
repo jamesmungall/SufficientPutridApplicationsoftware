@@ -96,8 +96,10 @@ function add_xyz() {
 
 var json_data_var;
 
-document.getElementById("get_json_button").addEventListener("click", get_json);
-document.getElementById("add_xyz_button").addEventListener("click", add_xyz);
-document
-  .getElementById("run_plotly_button")
-  .addEventListener("click", run_plotly);
+window.onload = function () {
+  document.getElementById("get_json_button").addEventListener("click", get_json);
+  document.getElementById("add_xyz_button").addEventListener("click", add_xyz);
+  document
+    .getElementById("run_plotly_button")
+    .addEventListener("click", run_plotly);
+}
