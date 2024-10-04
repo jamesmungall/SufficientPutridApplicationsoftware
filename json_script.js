@@ -49,7 +49,7 @@ function run_plotly() {
     z: json_data_var.z,
     mode: "markers",
     marker: {
-      size: 5,
+      size: json_data_var.brightness,
       color: json_data_var.temperature
     },
     type: "scatter3d"
@@ -95,6 +95,16 @@ function add_xyz() {
   document.getElementById("output").textContent = output;
 }
 
+function add_brightness() {
+  magnitude = json_data_var.magnitude;
+  brightness = [];
+  for (let i = 0; i < magnitude.length; i++) {
+    brightness[i] = 2.5 ^ (8 - magnitude[i]);
+  }
+  json_data_var["brightness"] = brightness;
+  document.getElementById("output").textContent = output;
+}
+
 var json_data_var;
 
 window.onload = function () {
@@ -105,4 +115,7 @@ window.onload = function () {
   document
     .getElementById("run_plotly_button")
     .addEventListener("click", run_plotly);
+  document
+    .getElementById("add_brightness_button")
+    .addEventListener("click", add_brightness);
 };
