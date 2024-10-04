@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="navigation.css">
   <script src="navigation.js" defer></script>
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
-    <script src="json_script.js"></script>
 </head>
 
 <body>
@@ -17,12 +16,18 @@
   <h1>Read json file</h1>
 
   <pre id="jsonData">id is jsonData</pre>
+  <pre id="source_id">id is source_id</pre>
   <pre id="ra">id is ra</pre>
   <pre id="dec">id is dec</pre>
+  <pre id="distance">id is distance</pre>
+  <pre id="magnitude">id is magnitude</pre>
+  <pre id="temperature">id is temperature</pre>
+  <pre id="output">id is output</pre>
 
-
-  <button id="myButton">get json</button>
-
+  <script src="json_script.js"></script> 
+  <button id="get_json_button">get json</button>
+  <button id="access_data_button">access data</button>
+  <button id="run_plotly_button">run plotly</button>
   <div id='plotly_div' style="width:600px;height:250px;">plotly div</div>
 </body>
 
