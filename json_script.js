@@ -19,15 +19,21 @@ function use_json(data) {
 
   dec_array = Object.values(data.dec);
   document.getElementById("dec").textContent = dec_array;
+  
+  temp_array = Object.values(data.teff_gspphot);
 
-  run_plotly(ra_array, dec_array);
+  run_plotly(ra_array, dec_array, temp_array);
 }
-
-function run_plotly(ra_array, dec_array) {
+function run_plotly(ra_array, dec_array, temp_array) {
   var trace1 = {
     x: ra_array,
     y: dec_array,
-    mode: 'markers',
+    mode: "markers",
+    marker: {
+      size: 5,
+
+      color: temp_array
+    },
     type: "scatter"
   };
 
@@ -36,12 +42,12 @@ function run_plotly(ra_array, dec_array) {
     title: "Scroll and Zoom",
     showlegend: false,
     margin: { t: 0 },
-    title: 'Chart Title'
+    title: "Chart Title"
   };
   var params = {
     editable: true,
     scrollZoom: true
-  }
+  };
 
   Plotly.newPlot("plotly_div", data, layout, params);
 }
