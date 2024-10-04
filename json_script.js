@@ -84,7 +84,10 @@ window.onload = function () {
   document
     .getElementById("get_json_button")
     .addEventListener("click", get_json);
-  document.getElementById("add_xyz_button").addEventListener("click", add_xyz);
+  
+  document
+    .getElementById("add_xyz_button")
+    .addEventListener("click", add_xyz);
 
   document
     .getElementById("add_brightness_button")
