@@ -5,21 +5,10 @@
 	<link rel="stylesheet" href="navigation.css">
  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 	<script src="navigation.js" defer></script>
+	<script src="json_script.js" defer></script>
 </head>
 <body>
-<div id="tester" style="width:600px;height:250px;"></div>
-<script>
+<div id="plotly_div" style="width:600px;height:250px;">plotly div</div>
 
-	TESTER = document.getElementById('tester');
-
-	Plotly.newPlot( TESTER, [{
-
-	x: [1, 2, 3, 4, 5],
-
-	y: [1, 2, 4, 8, 16] }], {
-
-	margin: { t: 0 } } );
-
-</script> 
 </body>
 </html> 
