@@ -27,6 +27,7 @@ function run_plotly(ra_array, dec_array) {
   var trace1 = {
     x: ra_array,
     y: dec_array,
+    mode: 'markers',
     type: "scatter"
   };
 
@@ -34,10 +35,15 @@ function run_plotly(ra_array, dec_array) {
   var layout = {
     title: "Scroll and Zoom",
     showlegend: false,
-    margin: { t: 0 }
+    margin: { t: 0 },
+    title: 'Chart Title'
   };
+  var params = {
+    editable: true,
+    scrollZoom: true
+  }
 
-  Plotly.newPlot("plotly_div", data, layout, { scrollZoom: true });
+  Plotly.newPlot("plotly_div", data, layout, params);
 }
 window.onload = function () {
   document.getElementById('myButton').addEventListener('click', get_json);
